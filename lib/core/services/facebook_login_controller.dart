@@ -36,6 +36,11 @@ class FacebookSignInController with ChangeNotifier
 
         notifyListeners();
       }
+    else{
+      EasyLoading.dismiss();
+      Get.defaultDialog(title: "Thông báo ",middleText: "Xác thực không thành "
+          "công");
+    }
 
 
   }
@@ -100,7 +105,8 @@ class FacebookSignInController with ChangeNotifier
         EasyLoading.dismiss();
       } else {
         EasyLoading.dismiss();
-        Get.defaultDialog(title:"Xác thực không thành công ");
+        Get.defaultDialog(title: "Thông báo ",middleText: "Xác thực không thành "
+            "công");
 
       }
 

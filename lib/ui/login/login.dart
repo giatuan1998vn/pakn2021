@@ -192,6 +192,7 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
         backgroundColor: Color(0xff3064D0),
       ),
       body: Container(
+        alignment: Alignment.center,
           // decoration: BoxDecoration(
           //   image: DecorationImage(
           //     image: AssetImage("assets/hb-logo.jpg"),
@@ -204,7 +205,7 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
             child: ListView(
               children: <Widget>[
                 SizedBox(
-                  height: 121.88,
+                  height: 50,
                 ),
                 Container(
                   alignment: Alignment.center,
@@ -451,8 +452,15 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
               await CongAPI.PostDangKyGG(
                   googleAccount.email, googleAccount.displayName);
               if (googleAccount != null) {
+                EasyLoading.show();
                 loginV(googleAccount.email, "");
+                EasyLoading.dismiss();
               }
+              else
+                {
+                  EasyLoading.dismiss();
+                  showAlertDialog(context, "Xác thực không thành công");
+                }
               // GoogleSignInAuthentication googleSignInAuthentication = await googleAccount.authentication;
               // SharedPreferences sharedToken = await SharedPreferences.getInstance();
               // await sharedToken.setString("token", googleSignInAuthentication.accessToken);

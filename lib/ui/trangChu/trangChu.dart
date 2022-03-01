@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:pakn2021/core/services/callApi.dart';
 import 'package:pakn2021/core/services/congDongService.dart';
@@ -50,7 +51,7 @@ class _congDongState extends State<trangChu> {
     GetDataDL();
     GetUser();
     refreshList();
-
+    EasyLoading.dismiss();
 
   }
   Widget getBodyKN(){
