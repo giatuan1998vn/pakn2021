@@ -84,6 +84,10 @@ class _congDongState extends State<trangChu> {
       setState(() {
         // dataList += json.decode(vbden)['OData'];
         CurrentID=  (json.decode(getData)['OData']['ID']);
+        TenUser=  (json.decode(getData)['OData']['TenTruyCap']);
+        DiaChiUser=  (json.decode(getData)['OData']['ThuongTru']);
+        EmailUser=  (json.decode(getData)['OData']['Email']);
+        DienThoaiUser=  (json.decode(getData)['OData']['DienThoai']);
 
       });}
 

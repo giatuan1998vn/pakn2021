@@ -188,7 +188,7 @@ class _thongTinChiTietWidgetState extends State<thongTinChiTietWidget> {
 
     for(var i in vban.tenPDF){
 
-      if(i['FileName'].contains("png")){
+      if(i['FileName'].contains("png") || i['FileName'].contains("jpg")){
         linkImage = i['Url'];
         image = i['FileName'];
         print("anh" +image.toString());

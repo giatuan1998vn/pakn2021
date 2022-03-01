@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:math';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:pakn2021/core/services/callApi.dart';
 import 'package:pakn2021/core/services/congDongService.dart';
 import 'package:pakn2021/ui/res/strings.dart';
 import 'package:path/path.dart';
@@ -24,16 +25,17 @@ class guiTrucTiep extends StatefulWidget {
 
 class _taoPhanAnhState extends State<guiTrucTiep> {
   TextEditingController textEditingControllerHoTen =
-  new TextEditingController();
+  new TextEditingController(text: TenUser);
   TextEditingController textEditingControllerEmail =
-  new TextEditingController();
-  TextEditingController textEditingControllerSDT = new TextEditingController();
+  new TextEditingController(text:EmailUser);
+  TextEditingController textEditingControllerSDT = new TextEditingController
+    (text:DienThoaiUser);
   TextEditingController textEditingControllerMaBaoMat =
   new TextEditingController();
   TextEditingController textEditingControllerTieuDe =
   new TextEditingController();
   TextEditingController textEditingControllerDiaChi =
-  new TextEditingController();
+  new TextEditingController(text:DiaChiUser);
   TextEditingController textEditingControllerDoanhNghiep =
   new TextEditingController();
   int id = 1;
