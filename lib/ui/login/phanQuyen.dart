@@ -30,7 +30,7 @@ class SplashState extends State<phanQuyenLogin> {
   @override
   void initState() {
     super.initState();
-    // _checkVersion();
+    _checkVersion();
   }
 
   void _checkVersion() async {
@@ -38,17 +38,21 @@ class SplashState extends State<phanQuyenLogin> {
       androidId: "com.simaxjsc.pakn2021",
     );
     final status = await newVersion.getVersionStatus();
-    newVersion.showUpdateDialog(
-      context: context,
-      versionStatus: status,
-      dialogTitle: "UPDATE!!!",
-      dismissButtonText: "Skip",
-      dialogText: "Please update the app from " + "${status.localVersion}" + " to " + "${status.storeVersion}",
-      dismissAction: () {
-        SystemNavigator.pop();
-      },
-      updateButtonText: "Lets update",
-    );
+    if(status.localVersion != status.storeVersion)
+    {
+      newVersion.showUpdateDialog(
+        context: context,
+        versionStatus: status,
+        dialogTitle: "UPDATE!!!",
+        dismissButtonText: "Skip",
+        dialogText: "Please update the app from " + "${status.localVersion}" + " to " + "${status.storeVersion}",
+        dismissAction: () {
+          SystemNavigator.pop();
+        },
+        updateButtonText: "Lets update",
+      );
+    }
+
 
     print("DEVICE : " + status.localVersion);
     print("STORE : " + status.storeVersion);
@@ -78,14 +82,14 @@ class SplashState extends State<phanQuyenLogin> {
       backgroundColor: Colors.white,
       body: Container(
         color: Colors.white,
-        padding:EdgeInsets.all(10),
+        padding:EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 
             Expanded(
-              flex:1,
+              flex:2,
               child: Container(
                   alignment: Alignment.bottomCenter,
                   child: Column(
@@ -97,7 +101,7 @@ class SplashState extends State<phanQuyenLogin> {
                     ],)
               ),
             ),
-            Expanded(   flex:3,
+            Expanded(   flex:8,
               child: Row(children: [
                 Expanded(child:
                 Container(
@@ -108,82 +112,106 @@ class SplashState extends State<phanQuyenLogin> {
                     children: <Widget>[
                       Expanded(
                         flex: 2,
-                        child: InkWell(
-                          highlightColor: Colors.blueAccent.withOpacity(0.5),
-                          splashColor: Colors.black38.withOpacity(0.5),
-                          onTap: (){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) =>
-                                  LoginWidgetCanBo()),
-                            );
-                          },
-                          child: Container(
-                            // margin: EdgeInsets.only(bottom: 100),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Center(
-                                  child: Image(
-
-                                image: AssetImage('assets/canboicon.png'),
+                        child: Container(
+                          // margin: EdgeInsets.only(bottom: 100),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox.fromSize(
+                                size: Size(100, 100), // button width and
+                                // height
+                                child: ClipOval(
+                                  child: Material(
+                                    color: Color(0xff3064D0) ,// button color
+                                    child: InkWell(
+                                      splashColor: Colors.orange, // splash color
+                                      onTap: () {  Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) =>
+                                            LoginWidgetCanBo()),
+                                      );}, // button pressed
+                                      child: Image( image: AssetImage
+                                        ('assets/canboicon.png'),) ,
+                                    ),
                                   ),
                                 ),
-                                SizedBox(height: 10,),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text("Cán bộ", style: TextStyle(fontSize: 24,
-                                       )),
+                              ),
+                              SizedBox(height: 9.28,),
+                              Text("Cán bộ",style: TextStyle
+                                (fontSize: 24),)
+                              // Center(
+                              //   child: ButtonI(
+                              //
+                              // image: AssetImage('assets/canboicon.png'),
+                              //   ),
+                              // ),
+                              // SizedBox(height: 10,),
+                              // Column(
+                              //   crossAxisAlignment: CrossAxisAlignment.center,
+                              //   mainAxisAlignment: MainAxisAlignment.end,
+                              //   children: [
+                              //     Text("Cán bộ", style: TextStyle(fontSize: 24,
+                              //        )),
+                              //
+                              //
+                              //   ],),
 
-
-                                  ],),
-
-                              ],),
-                          ),
+                            ],),
                         ),
 
                       ),
                       Expanded(
                         flex: 2,
-                        child: InkWell(
-                          highlightColor: Colors.blueAccent.withOpacity(0.5),
-                          splashColor: Colors.black38.withOpacity(0.5),
-                          onTap:(){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => LoginWidget()),
-                            );
-                          },
-                          child: Container(
-                            /// margin: EdgeInsets.only(bottom: 100),
-
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Center(
-                                    child: Image(
-
-                                      image: AssetImage('assets/congnhanicon.png'),
+                        child: Container(
+                          // margin: EdgeInsets.only(bottom: 100),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox.fromSize(
+                                size: Size(100, 100), // button width and
+                                // height
+                                child: ClipOval(
+                                  child: Material(
+                                    color: Color(0xff3064D0) ,// button color
+                                    child: InkWell(
+                                      splashColor: Colors.orange, // splash color
+                                      onTap: () {   Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => LoginWidget()),
+                                      );}, // button pressed
+                                      child: Image( image: AssetImage
+                                        ('assets/congnhanicon.png'),) ,
                                     ),
                                   ),
-                                  SizedBox(height: 10,),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Text("Công dân", style: TextStyle(fontSize: 24,
-                                        )),
+                                ),
+                              ),
+                              SizedBox(height: 9.28,),
+                              Text("Công dân", style: TextStyle(fontSize: 24,
+                              )),
+                              // Center(
+                              //   child: ButtonI(
+                              //
+                              // image: AssetImage('assets/canboicon.png'),
+                              //   ),
+                              // ),
+                              // SizedBox(height: 10,),
+                              // Column(
+                              //   crossAxisAlignment: CrossAxisAlignment.center,
+                              //   mainAxisAlignment: MainAxisAlignment.end,
+                              //   children: [
+                              //     Text("Cán bộ", style: TextStyle(fontSize: 24,
+                              //        )),
+                              //
+                              //
+                              //   ],),
 
-
-                                    ],),
-                                ],)
-                          ),
+                            ],),
                         ),
+
                       ),
+
                     ],
                   ),
                 ))
