@@ -27,6 +27,10 @@ class FacebookSignInController with ChangeNotifier
         await CongAPI.PostDangKyGG(userData["email"],userData["name"]);
         if(userData != null){
           loginV(userData["email"],"");
+        }  else{
+          EasyLoading.dismiss();
+          Get.defaultDialog(title: "Thông báo ",middleText: "Xác thực không thành "
+              "công");
         }
 
         // Navigator.of(context)
@@ -36,11 +40,7 @@ class FacebookSignInController with ChangeNotifier
 
         notifyListeners();
       }
-    else{
-      EasyLoading.dismiss();
-      Get.defaultDialog(title: "Thông báo ",middleText: "Xác thực không thành "
-          "công");
-    }
+
 
 
   }
