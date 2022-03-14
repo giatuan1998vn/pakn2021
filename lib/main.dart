@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget
       ChangeNotifierProvider(create: (context)=>FacebookSignInController()),
     ],child: GetMaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //

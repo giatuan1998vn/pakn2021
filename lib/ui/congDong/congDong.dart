@@ -12,7 +12,7 @@ import 'package:pakn2021/ui/login/login.dart';
 import 'package:pakn2021/ui/login/splash.dart';
 import 'package:pakn2021/ui/main/AppBar.dart';
 import 'package:flutter_offline/flutter_offline.dart';
-import 'package:connectivity/connectivity.dart';
+//import 'package:connectivity/connectivity.dart';
 import 'package:pakn2021/ui/main/gioiThieu.dart';
 import 'package:pakn2021/ui/main/menuLeft.dart';
 import 'package:pakn2021/ui/taoPhanAnh/taoPhanAnh.dart';

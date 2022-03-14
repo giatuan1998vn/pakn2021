@@ -46,60 +46,8 @@ class _homePageState extends State<homePage> {
   @override
   Widget build(BuildContext context) {
     // Size size = MediaQuery.of(context).size;
-    return OfflineBuilder(
-        debounceDuration: Duration.zero,
-        connectivityBuilder: (
-            BuildContext context,
-            ConnectivityResult connectivity,
-            Widget child,
-            )
-        {
-          if (connectivity == ConnectivityResult.none) {
 
-            return Scaffold(
-              body:Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-
-                      child: Image(
-                        height: 122,
-                        image: AssetImage('assets/robot.jpg'),
-                      ),
-                    ),
-                    SizedBox(height: 20,),
-                    Container(
-
-                      alignment: Alignment.center,
-
-                      child: Text("Không có kết nối mạng",style:
-                      TextStyle
-                        (fontSize:
-                      16,fontStyle: FontStyle.normal,fontWeight: FontWeight
-                          .w400,
-                          color: Color(0xff021029)),),
-                    ),
-                    SizedBox(height: 6,),
-                    Container(
-
-                      alignment: Alignment.center,
-
-                      child: Text("Kiểm tra lại đường truyền",style:
-                      TextStyle
-                        (fontSize:
-                      12,fontStyle: FontStyle.normal,fontWeight: FontWeight
-                          .w400,
-                          color: Color(0xff021029)),),
-                    ),
-                  ],),
-              ),
-            );
-          }
-          return child;
-        },
-        child:
-      Scaffold(
+    return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Color(0xffE5E5E5),
       bottomNavigationBar: BottomAppBar(
@@ -148,14 +96,125 @@ class _homePageState extends State<homePage> {
       //   onPressed: () {
 
       //   },//     Navigator.push(
-        //       //       context,
-        //       //       MaterialPageRoute(
-        //       //         builder: (context) => taoPhanAnh(),
-        //       //       ),
-        //       //     );
+      //       //       context,
+      //       //       MaterialPageRoute(
+      //       //         builder: (context) => taoPhanAnh(),
+      //       //       ),
+      //       //     );
       // ),
       body: body(),
-    ));
+    );
+
+    // return OfflineBuilder(
+    //     debounceDuration: Duration.zero,
+    //     connectivityBuilder: (
+    //         BuildContext context,
+    //         ConnectivityResult connectivity,
+    //         Widget child,
+    //         )
+    //     {
+    //       if (connectivity == ConnectivityResult.none) {
+    //
+    //         return Scaffold(
+    //           body:Center(
+    //             child: Column(
+    //               mainAxisAlignment: MainAxisAlignment.center,
+    //               children: [
+    //                 Center(
+    //
+    //                   child: Image(
+    //                     height: 122,
+    //                     image: AssetImage('assets/robot.jpg'),
+    //                   ),
+    //                 ),
+    //                 SizedBox(height: 20,),
+    //                 Container(
+    //
+    //                   alignment: Alignment.center,
+    //
+    //                   child: Text("Không có kết nối mạng",style:
+    //                   TextStyle
+    //                     (fontSize:
+    //                   16,fontStyle: FontStyle.normal,fontWeight: FontWeight
+    //                       .w400,
+    //                       color: Color(0xff021029)),),
+    //                 ),
+    //                 SizedBox(height: 6,),
+    //                 Container(
+    //
+    //                   alignment: Alignment.center,
+    //
+    //                   child: Text("Kiểm tra lại đường truyền",style:
+    //                   TextStyle
+    //                     (fontSize:
+    //                   12,fontStyle: FontStyle.normal,fontWeight: FontWeight
+    //                       .w400,
+    //                       color: Color(0xff021029)),),
+    //                 ),
+    //               ],),
+    //           ),
+    //         );
+    //       }
+    //       return child;
+    //     },
+    //     child:
+    //   Scaffold(
+    //   key: _scaffoldKey,
+    //   backgroundColor: Color(0xffE5E5E5),
+    //   bottomNavigationBar: BottomAppBar(
+    //     clipBehavior: Clip.antiAlias,
+    //     color: Colors.blue,
+    //     shape: CircularNotchedRectangle(),
+    //     child: BottomNavigationBar(
+    //       type: BottomNavigationBarType.fixed,
+    //       //backgroundColor: Color(0xff3366FF),
+    //       onTap: onTabTapped,
+    //       fixedColor: Color(0xff3064D0),
+    //       unselectedItemColor: Colors.black,
+    //       currentIndex: _currentIndex,
+    //       items: [
+    //         new BottomNavigationBarItem(
+    //           icon: Icon(Icons.home),
+    //           label:'Trang chủ',
+    //         ),
+    //         new BottomNavigationBarItem(
+    //           icon: Icon(Icons.group),
+    //           label: 'Phản ánh',
+    //         ),
+    //         new BottomNavigationBarItem(
+    //           icon: Icon(
+    //             Icons.person,
+    //           ),label: 'Cá nhân',
+    //
+    //           // title: Text(
+    //           //   'Cá nhân',
+    //           //   style: TextStyle(
+    //           //       fontSize: 14,
+    //           //       fontStyle: FontStyle.normal,
+    //           //       fontWeight: FontWeight.w400),
+    //           // ),
+    //         ),
+    //       ],
+    //     ),
+    //   ),
+    //   // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    //   // floatingActionButton: FloatingActionButton(backgroundColor: Color(0xff3064D0),
+    //   //   child: new Image.asset(
+    //   //     'assets/edit-text.png',
+    //   //
+    //   //     // fit: BoxFit.fitWidth,
+    //   //   ),
+    //   //   onPressed: () {
+    //
+    //   //   },//     Navigator.push(
+    //     //       //       context,
+    //     //       //       MaterialPageRoute(
+    //     //       //         builder: (context) => taoPhanAnh(),
+    //     //       //       ),
+    //     //       //     );
+    //   // ),
+    //   body: body(),
+    // ));
   }
 
   Widget body() {

@@ -47,6 +47,11 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
   void initState() {
     super.initState();
   }
+  @override
+  void dispose() {
+    super.dispose();
+    EasyLoading.dismiss();
+  }
 
   loginUI() {
     return Consumer<FacebookSignInController>(builder: (contex, model, child) {

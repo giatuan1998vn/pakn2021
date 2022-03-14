@@ -44,9 +44,9 @@ dependencies:
   flutter_facebook_keyhash: ^0.0.4
   file_picker: ^4.2.7
   flutter_html: ^2.1.5
-  connectivity_plus: ^2.1.0
+  #connectivity_plus: ^2.1.0
   flutter_offline: ^2.0.0
-  connectivity: ^3.0.6
+  #connectivity: ^3.0.6
   shared_preferences : any
   get: ^4.3.8
   datetime_picker_formfield: ^1.0.0

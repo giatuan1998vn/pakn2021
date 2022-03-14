@@ -32,7 +32,13 @@ class LoginState extends State<LoginWidgetCanBo> {
   void initState() {
     super.initState();
   }
- 
+
+  @override
+  void dispose() {
+    super.dispose();
+    EasyLoading.dismiss();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
