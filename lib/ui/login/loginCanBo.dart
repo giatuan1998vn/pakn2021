@@ -274,8 +274,8 @@ class LoginState extends State<LoginWidgetCanBo> {
       EasyLoading.show(maskType: EasyLoadingMaskType.black,
       status: "Vui lòng chờ..");
 
-      //var ural = "http://appmobile.duongdaynong.ungdungtructuyen.vn/token";
-      var ural =  "http://hotlinevp.ungdungtructuyen.vn/AppMobile/token";
+     // var ural =  "http://hotlinevp.ungdungtructuyen.vn/AppMobile/token";
+      var ural =  "http://pakn.vinhphuc.gov.vn/AppMobile/token";
       var details = {
         'username': username,
         'password': password,
