@@ -92,7 +92,7 @@
             <array>
                 <!-- TODO Replace this value: -->
                 <!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
-                <string>429714810799-9v1gko7gruvmtnic1bp314pkdb02lm9k.apps.googleusercontent.com</string>
+                <string>com.googleusercontent.apps.429714810799-9v1gko7gruvmtnic1bp314pkdb02lm9k</string>
             </array>
         </dict>
     </array>

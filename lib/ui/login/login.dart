@@ -33,8 +33,10 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
   bool isLoading = false;
   bool _showPass = true;
   var user;
+  var _googleSignIn = GoogleSignIn();
+  GoogleSignInAccount googleAccount; 
 
-  GoogleSignIn _googleSignIn = GoogleSignIn(
+  GoogleSignIn googleSignIn = GoogleSignIn(
     // Optional clientId
     // clientId: '479882132969-9i9aqik3jfjd7qhci1nqf0bm2g71rm1u.apps.googleusercontent.com',
     scopes: <String>[
@@ -452,8 +454,7 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
           ),
           _buildSocialBtn(
             () async {
-              var _googleSignIn = GoogleSignIn();
-              GoogleSignInAccount googleAccount;
+
               googleAccount = await _googleSignIn.signIn();
               await CongAPI.PostDangKyGG(
                   googleAccount.email, googleAccount.displayName);
@@ -490,8 +491,8 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
       EasyLoading.show(
           maskType: EasyLoadingMaskType.black, status: "Vui lòng chờ..");
 
-      //var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV2";
-      var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV2";
+      var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV2";
+      //var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV2";
       var details = {
         'username': username,
         'password': password,
@@ -573,8 +574,8 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
   }
 
   Future<void> loginV(String username, String password) async {
-   // var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV3";
-    var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV3";
+   var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV3";
+    //var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV3";
     var details = {
       'username': username,
       'password': password,
