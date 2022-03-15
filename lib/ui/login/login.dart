@@ -637,5 +637,9 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
       //Get.to(homePage() );
 
     }
+    else{
+      EasyLoading.dismiss();
+      showAlertDialog(context, "Xác thực không thành công");
+    }
   }
 }
