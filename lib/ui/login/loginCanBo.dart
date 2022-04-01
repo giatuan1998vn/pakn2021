@@ -280,8 +280,8 @@ class LoginState extends State<LoginWidgetCanBo> {
       EasyLoading.show(maskType: EasyLoadingMaskType.black,
       status: "Vui lòng chờ..");
 
-     var ural =  "http://hotlinevp.ungdungtructuyen.vn/AppMobile/token";
-      //var ural =  "http://pakn.vinhphuc.gov.vn/AppMobile/token";
+     //var ural =  "http://hotlinevp.ungdungtructuyen.vn/AppMobile/token";
+      var ural =  "http://pakn.vinhphuc.gov.vn/AppMobile/token";
       var details = {
         'username': username,
         'password': password,
@@ -318,9 +318,11 @@ class LoginState extends State<LoginWidgetCanBo> {
         print(expiresOut.toString());
       var thanhcong=  await CongAPI.SendToken(username,username,getToken,"1");
         bool Erros = true;
-        Erros = json.decode(thanhcong)['Erros'] != null
-            ? json.decode(thanhcong)['Erros']
-            : true;
+        if(thanhcong != null){
+          Erros = json.decode(thanhcong)['Erros'] != null
+              ? json.decode(thanhcong)['Erros']
+              : true;
+        }
         if (Erros == false) {
           if (mounted) {
             setState(() {

@@ -242,9 +242,11 @@ class _phanAnhWidgetState extends State<phanAnhWidget> {
                         var thanhcong = await CongAPI.SendToken(
                             username, username, token, "1");
                         bool Erros = true;
-                        Erros = json.decode(thanhcong)['Erros'] != null
-                            ? json.decode(thanhcong)['Erros']
-                            : true;
+                        if(thanhcong != null){
+                          Erros = json.decode(thanhcong)['Erros'] != null
+                              ? json.decode(thanhcong)['Erros']
+                              : true;
+                        }
                         if (Erros == false) {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(

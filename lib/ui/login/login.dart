@@ -491,8 +491,8 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
       EasyLoading.show(
           maskType: EasyLoadingMaskType.black, status: "Vui lòng chờ..");
 
-      var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV2";
-      //var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV2";
+      //var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV2";
+      var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV2";
       var details = {
         'username': username,
         'password': password,
@@ -530,9 +530,12 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
         var thanhcong =
             await CongAPI.SendToken(username, username, getToken, "3");
         bool Erros = true;
-        Erros = json.decode(thanhcong)['Erros'] != null
-            ? json.decode(thanhcong)['Erros']
-            : true;
+        if(thanhcong != null){
+          Erros = json.decode(thanhcong)['Erros'] != null
+              ? json.decode(thanhcong)['Erros']
+              : true;
+        }
+
         if (Erros == false) {
           if (mounted) {
             setState(() {
@@ -574,8 +577,8 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
   }
 
   Future<void> loginV(String username, String password) async {
-   var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV3";
-    //var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV3";
+   //var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV3";
+    var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV3";
     var details = {
       'username': username,
       'password': password,
@@ -611,9 +614,11 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
       var expiresOut = now.add(new Duration(seconds: expires_in));
     var thanhcong=  await CongAPI.SendToken(username, username, getToken, "4");
       bool Erros = true;
-      Erros = json.decode(thanhcong)['Erros'] != null
-          ? json.decode(thanhcong)['Erros']
-          : true;
+      if(thanhcong != null){
+        Erros = json.decode(thanhcong)['Erros'] != null
+            ? json.decode(thanhcong)['Erros']
+            : true;
+      }
       if (Erros == false) {
         if (mounted) {
           setState(() {

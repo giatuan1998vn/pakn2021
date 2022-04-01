@@ -95,9 +95,11 @@ class FacebookSignInController with ChangeNotifier
       // await updateTokenFirebase(getToken);
    var thanhcong =   await CongAPI.SendToken(username,username,getToken,"4");
       bool Erros = true;
-      Erros = json.decode(thanhcong)['Erros'] != null
-          ? json.decode(thanhcong)['Erros']
-          : true;
+      if(thanhcong != null){
+        Erros = json.decode(thanhcong)['Erros'] != null
+            ? json.decode(thanhcong)['Erros']
+            : true;
+      }
       if (Erros == false) {
 
 

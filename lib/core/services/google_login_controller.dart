@@ -37,7 +37,7 @@ class GoogleSignInController with ChangeNotifier{
   }
   Future<void> loginV(String username, String password) async {
     //var ural = "http://appmobile.duongdaynong.ungdungtructuyen.vn/tokenV3";
-    var ural =  "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV3";
+   var ural =  "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV3";
     var details = {
       'username': username,
       'password': password,
@@ -75,9 +75,11 @@ class GoogleSignInController with ChangeNotifier{
 
       var thanhcong =   await CongAPI.SendToken(username,username,getToken,"4");
       bool Erros = true;
-      Erros = json.decode(thanhcong)['Erros'] != null
-          ? json.decode(thanhcong)['Erros']
-          : true;
+      if(thanhcong != null){
+        Erros = json.decode(thanhcong)['Erros'] != null
+            ? json.decode(thanhcong)['Erros']
+            : true;
+      }
       if (Erros == false) {
 
 
