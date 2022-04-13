@@ -186,19 +186,19 @@ class _tuChoiState extends State<suaWidget> {
                   ),
                 ),
                 vban.TrangThaiAnHien == true
-                    ? Container(
-                        width: MediaQuery.of(context).size.width * 0.6,
-                        padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                        child: Text(
-                          "Người gửi yêu cầu ẩn thông tin",
-                          style: TextStyle(
-                              color: Colors.black.withOpacity(0.75),
-                              fontStyle: FontStyle.normal,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 13),
-                          textAlign: TextAlign.justify,
-                        ),
-                      )
+                    ?  Container(
+                  width: MediaQuery.of(context).size.width * 0.75,
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  child: Text(
+                    "Người gửi yêu cầu ẩn thông tin",
+                    style: TextStyle(
+                        color: Colors.black.withOpacity(0.75),
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 13),
+                    textAlign: TextAlign.justify,
+                  ),
+                )
                     : Container(
                         width: MediaQuery.of(context).size.width * 0.75,
                         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),

@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 //const String DOMAIN = "http://hotlinevp.ungdungtructuyen.vn/HotLineTichHop/";
-const String DOMAIN = "http://pakn.vinhphuc.gov.vn/HotLineTichHop/";
+const String DOMAIN = "https://pakn.vinhphuc.gov.vn/HotLineTichHop/";
 SharedPreferences sharedStorage;
 String pdf = "";
 String TenUser = "";

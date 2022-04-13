@@ -40,6 +40,7 @@ class _phanAnhWidgetState extends State<phanAnhWidget> {
   int Skip = 0;
   int take = 20;
   int page = 1;
+  bool checkCard = false;
 
   bool chckSwitch = false;
   ScrollController _scrollerController = new ScrollController();
@@ -230,33 +231,40 @@ class _phanAnhWidgetState extends State<phanAnhWidget> {
                 MenuLeft(ActionXL: ActionXLL),
                 //Divider(),
                 Card(
-                  color: Colors.white10,
+                  color: checkCard ?Colors.cyan:Colors.white10,
                   //height: MediaQuery.of(context).size.height /13,
                   child: Container(
                     height: MediaQuery.of(context).size.height / 14,
                     child: InkWell(
                       onTap: () async {
-                        sharedStorage = await SharedPreferences.getInstance();
-                        String token = sharedStorage.getString("token");
-                        String username = sharedStorage.getString("username");
-                        var thanhcong = await CongAPI.SendToken(
-                            username, username, token, "1");
-                        bool Erros = true;
-                        if(thanhcong != null){
-                          Erros = json.decode(thanhcong)['Erros'] != null
-                              ? json.decode(thanhcong)['Erros']
-                              : true;
-                        }
-                        if (Erros == false) {
-                          Navigator.of(context).pushAndRemoveUntil(
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      phanQuyenLogin()),
-                              (Route<dynamic> route) => false);
-                        } else {
-                          showAlertDialog(
-                              context, "Đăng xuất không thành công!");
-                        }
+                        setState(() {
+                          checkCard =  true;
+                        });
+                        Navigator.pop(context);
+                        Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+                            builder: (BuildContext context) => phanQuyenLogin()), (Route<dynamic> route) => false);
+
+                        // sharedStorage = await SharedPreferences.getInstance();
+                        // String token = sharedStorage.getString("token");
+                        // String username = sharedStorage.getString("username");
+                        // var thanhcong = await CongAPI.SendToken(
+                        //     username, username, token, "1");
+                        // bool Erros = true;
+                        // if(thanhcong != null){
+                        //   Erros = json.decode(thanhcong)['Erros'] != null
+                        //       ? json.decode(thanhcong)['Erros']
+                        //       : true;
+                        // }
+                        // if (Erros == false) {
+                        //   Navigator.of(context).pushAndRemoveUntil(
+                        //       MaterialPageRoute(
+                        //           builder: (BuildContext context) =>
+                        //               phanQuyenLogin()),
+                        //       (Route<dynamic> route) => false);
+                        // } else {
+                        //   showAlertDialog(
+                        //       context, "Đăng xuất không thành công!");
+                        // }
                       },
                       child: Container(
                         alignment: Alignment.center,

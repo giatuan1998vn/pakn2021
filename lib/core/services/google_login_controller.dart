@@ -87,7 +87,8 @@ class GoogleSignInController with ChangeNotifier{
         EasyLoading.dismiss();
       } else {
         EasyLoading.dismiss();
-        Get.defaultDialog(title:"Xác thực không thành công ");
+        Get.defaultDialog(title: "Thông báo ",middleText: "Xác thực không thành "
+            "công");
 
       }
 

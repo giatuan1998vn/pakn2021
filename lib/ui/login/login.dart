@@ -492,7 +492,7 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
           maskType: EasyLoadingMaskType.black, status: "Vui lòng chờ..");
 
       //var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV2";
-      var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV2";
+      var ural = "https://pakn.vinhphuc.gov.vn/AppMobile/tokenV2";
       var details = {
         'username': username,
         'password': password,
@@ -577,8 +577,8 @@ class LoginState extends State<LoginWidget> with ChangeNotifier {
   }
 
   Future<void> loginV(String username, String password) async {
-   //var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV3";
-    var ural = "http://pakn.vinhphuc.gov.vn/AppMobile/tokenV3";
+  // var ural = "http://hotlinevp.ungdungtructuyen.vn/AppMobile/tokenV3";
+    var ural = "https://pakn.vinhphuc.gov.vn/AppMobile/tokenV3";
     var details = {
       'username': username,
       'password': password,
