@@ -281,7 +281,7 @@ class LoginState extends State<LoginWidgetCanBo> {
       status: "Vui lòng chờ..");
 
      //var ural =  "http://hotlinevp.ungdungtructuyen.vn/AppMobile/token";
-      var ural =  "http://pakn.vinhphuc.gov.vn/AppMobile/token";
+      var ural =  "https://pakn.vinhphuc.gov.vn/AppMobile/token";
       var details = {
         'username': username,
         'password': password,
